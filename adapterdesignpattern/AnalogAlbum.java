@@ -1,6 +1,6 @@
 package adapterdesignpattern;
 /**
- * Interface for AnalogAlbum
+ * Interface for Analog Album
  * @author Jackson Carroll
  */
 public interface AnalogAlbum {
