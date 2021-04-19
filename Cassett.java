@@ -1,33 +1,43 @@
 import java.util.ArrayList;
 /**
- * Class for Cassett implementing AnalogAlbum interface
+ * Class for Cassett song list implementing AnalogAlbum interface
  * @author Jackson Carroll
  */
 public class Cassett implements AnalogAlbum {
     private ArrayList<String> songs;
     private int currentIndex;
 
-    public Cassett(String song1, String song2) {
-        // TODO
+    public Cassett(String song1, String song2, String song3, String song4, String song5) {
+        songs.add(song1);
+        songs.add(song2);
+        songs.add(song3);
+        songs.add(song4);
+        songs.add(song5);
     }
 
     public String play() {
-        // TODO
+        if(currentIndex == currentIndex + 1)
+            return "At the end of the cassett you need to rewind";
+        return "Playing song " + currentIndex + ":" + songs.get(currentIndex);
     }
 
     public String rewind() {
-        // TODO
+        if(currentIndex > 0)
+            return "Rewinding to song " + songs.get(currentIndex - 1);
+        return "Fully Re-Wound";
     }
 
     public String ffwd() {
-        // TODO
+        if(currentIndex < songs.size())
+            return "Forwarding to song " + songs.get(currentIndex + 1);
+        return "Forwarded to the end of the cassett";
     }
 
     public String pause() {
-        // TODO
+        return "Pausing...";
     }
 
     public String stopEject() {
-        // TODO
+        return "Stopping cassett and ejecting";
     }
 }
