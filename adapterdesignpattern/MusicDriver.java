@@ -1,4 +1,4 @@
-//package csce247.assignments.adapter;
+package adapterdesignpattern;
 
 public class MusicDriver {
 

@@ -1,3 +1,5 @@
+package adapterdesignpattern;
+
 import java.util.ArrayList;
 /**
  * CD class implementing DigitalAlbum

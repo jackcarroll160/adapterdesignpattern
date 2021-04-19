@@ -1,3 +1,4 @@
+package adapterdesignpattern;
 /**
  * AnalogAdapter class implementing AnalogAlbum interface
  * @author Jackson Carroll

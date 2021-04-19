@@ -1,3 +1,4 @@
+package adapterdesignpattern;
 /**
  * Interface for Digital Album
  * @author Jackson Carroll

@@ -1,3 +1,4 @@
+package adapterdesignpattern;
 /**
  * Interface for AnalogAlbum
  * @author Jackson Carroll
