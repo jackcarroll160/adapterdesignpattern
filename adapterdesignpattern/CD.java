@@ -7,7 +7,7 @@ import java.util.ArrayList;
  */
 public class CD implements DigitalAlbum {
     private ArrayList<String> songs = new ArrayList<>();
-    private int currentIndex;
+    private int currentIndex = 0;
 
     public CD(String song1, String song2, String song3, String song4, String song5) {
         songs.add(song1);
@@ -18,31 +18,34 @@ public class CD implements DigitalAlbum {
     }
 
     public String playFromBeginning() {
-        return "Playing song 1: " + songs.get(0);
-        // Will also advance to the next song
+        currentIndex = 0;
+        return "Playing song 1: " + songs.get(currentIndex) + "\n" + nextSong();
     }
 
     public String playSong(int num) {
-        if(num < songs.size() && num > 0)
-            return "Playing: " + songs.get(currentIndex);
+        currentIndex = num - 1;
+        if(currentIndex < songs.size() && currentIndex > 0)
+            return "Playing: " + num + prevSong();
         return "Not a valid song number";
     }
 
     public String prevSong() {
-        if(currentIndex - 1 > 0)
-            return "Skipping back and playing: " + songs.get(currentIndex);
+        if(--currentIndex >= 0)
+            return "Skipping back and playing: " + songs.get(currentIndex - 1);
         return "Already at the beginning";
     }
 
     public String nextSong() {
-        if(currentIndex + 1 < songs.size())
-            return "Playing " + currentIndex + ":" + songs.get(currentIndex);
-        return "Playing 1: " + songs.get(0);
+        if(currentIndex <= songs.size())
+            return "Playing: " + (currentIndex + 1) + ": " + songs.get(currentIndex++);
+        else
+            return playFromBeginning();
+        
     }
 
     public String stop() {
-        currentIndex = 0;
-        return "Stopping digital album";
+        playFromBeginning();
+        return "Stopping CD and ejecting";
     }
 
     public String pause() {
