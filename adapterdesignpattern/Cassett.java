@@ -6,7 +6,7 @@ import java.util.ArrayList;
  * @author Jackson Carroll
  */
 public class Cassett implements AnalogAlbum {
-    private ArrayList<String> songs;
+    private ArrayList<String> songs = new ArrayList<>();
     private int currentIndex;
 
     public Cassett(String song1, String song2, String song3, String song4, String song5) {

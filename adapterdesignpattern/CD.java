@@ -6,7 +6,7 @@ import java.util.ArrayList;
  * @author Jackson Carroll
  */
 public class CD implements DigitalAlbum {
-    private ArrayList<String> songs;
+    private ArrayList<String> songs = new ArrayList<>();
     private int currentIndex;
 
     public CD(String song1, String song2, String song3, String song4, String song5) {
