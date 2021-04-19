@@ -29,7 +29,7 @@ public class CD implements DigitalAlbum {
     }
 
     public String prevSong() {
-        if(--currentIndex >= 0)
+        if(--currentIndex > 0)
             return "Skipping back and playing: " + songs.get(currentIndex - 1);
         return "Already at the beginning";
     }
