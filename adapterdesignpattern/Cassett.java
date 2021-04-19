@@ -7,7 +7,7 @@ import java.util.ArrayList;
  */
 public class Cassett implements AnalogAlbum {
     private ArrayList<String> songs = new ArrayList<>();
-    private int currentIndex;
+    private int currentIndex = 0;
 
     public Cassett(String song1, String song2, String song3, String song4, String song5) {
         songs.add(song1);
@@ -18,20 +18,21 @@ public class Cassett implements AnalogAlbum {
     }
 
     public String play() {
-        if(currentIndex == currentIndex + 1)
-            return "At the end of the cassett you need to rewind";
-        return "Playing song " + currentIndex + ":" + songs.get(currentIndex);
+        if(currentIndex <= songs.size())
+            return "Playing song " + (1 + currentIndex) + ": " + songs.get(currentIndex++);
+        return "At the end of the cassett you need to rewind";
+        
     }
 
     public String rewind() {
         if(currentIndex > 0)
-            return "Rewinding to song " + songs.get(currentIndex - 1);
+            return "Rewinding to song " + (currentIndex--);
         return "Fully Re-Wound";
     }
 
     public String ffwd() {
-        if(currentIndex < songs.size())
-            return "Forwarding to song " + songs.get(currentIndex + 1);
+        if(++currentIndex <= songs.size())
+            return "Forwarding to song " + (currentIndex + 1);
         return "Forwarded to the end of the cassett";
     }
 
